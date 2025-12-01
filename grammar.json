@@ -1,0 +1,50 @@
+{
+  "axiom": "S",
+
+  "notes": "Growth-safe 3D dungeon grammar. No early termination. Specials (B,T,K) are placed post-pass, not during rewriting.",
+
+  "rules": {
+    "S": [
+      { "p": 1.0, "exp": "P" }
+    ],
+
+    "P": [
+      { "p": 0.60, "exp": "CP" },
+      { "p": 0.20, "exp": "CJP" },
+      { "p": 0.10, "exp": "CVP" },
+      { "p": 0.10, "exp": "CRP" }
+    ],
+
+    "J": [
+      { "p": 0.55, "exp": "[+CP][-CP]P" },
+      { "p": 0.25, "exp": "[+CP]P" },
+      { "p": 0.10, "exp": "[-CP]P" },
+      { "p": 0.10, "exp": "[+CR][-CR]P" }
+    ],
+
+    "V": [
+      { "p": 0.45, "exp": "UCP" },
+      { "p": 0.45, "exp": "DCP" },
+      { "p": 0.10, "exp": "[+UCP][-DCP]P" }
+    ],
+
+    "R": [
+      { "p": 0.60, "exp": "CR" },
+      { "p": 0.40, "exp": ";" }
+    ],
+
+    "T": [
+      { "p": 1.0, "exp": ";" }
+    ],
+    "K": [
+      { "p": 1.0, "exp": ";" }
+    ],
+    "B": [
+      { "p": 1.0, "exp": ";" }
+    ],
+
+    "C": [
+      { "p": 1.0, "exp": "C" }
+    ]
+  }
+}
